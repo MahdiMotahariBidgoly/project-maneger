@@ -13,7 +13,7 @@ module.exports= class Application {
     configApplication() { 
         const path = require("path")
         this.#app.use(this.#express.json())
-        this.app.use(this.#express.urlencoded({ extended: true }))
+        this.#app.use(this.#express.urlencoded({ extended: true }));
         this.#app.use(this.#express.static(path.join(__dirname,"..","public")))
         
     }
@@ -22,12 +22,13 @@ module.exports= class Application {
         const http = require("http");
         const server = http.createServer(this.#app);
         server.listen(PORT, () => {
-            console.log(`server run on http://localhost:${PORT}`);
+            console.log(`server run > on http://localhost:${PORT}`);
             
         })
     }
     configDatabase(DB_URL) {
-        const mongoose = require("mongoose")
+        const mongoose = require("mongoose");
+        mongoose.set('strictQuery', false)
         mongoose.connect(DB_URL, (error) => {
             if (error) throw error
             return console.log("Conneted to DB successfuly");

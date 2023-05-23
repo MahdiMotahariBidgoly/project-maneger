@@ -19,6 +19,6 @@
   "homepage": "https://github.com/MahdiMotahariBidgoly/project-maneger#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "mongoose": "^7.2.0"
+    "mongoose": "^6.10.0"
   }
 }
